@@ -95,7 +95,7 @@ if ( ! function_exists( 'ep_add_sunat_fields' ) )
                 $customer_address    = get_post_meta( $post->ID, '_billing_address_1', true );
                 $customer_city       = get_post_meta( $post->ID, '_billing_city', true );
                 $customer_state      = get_post_meta( $post->ID, '_billing_state', true );
-                $customer_postcode   = get_post_meta( $post->ID, '_billing_postcode', true );
+                $customer_postcode   = get_post_meta( $post->ID, '_billing_distrito', true );
                 $customer_ruc        = get_post_meta( $post->ID, '_billing_nif', true );
                 $api_document_type   = get_post_meta( $post->ID, 'api_document_type', true );
 

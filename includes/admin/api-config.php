@@ -46,7 +46,7 @@ function facturaloperu_api_config_page_settings(){
                                     <label>API_TOKEN</label>
                                 </th>
                                 <td class="forminp forminp-text">
-                                    <input type="text" name="facturaloperu_api_config_token" id="facturaloperu_api_config_token" value="<?php echo get_option('facturaloperu_api_config_token'); ?>" style="min-width: 400px" class="input-text regular-input">
+                                    <input type="text" placeholder="3xcSVO8OGiTnezevBe0kTMZEyT3XPP0o7eXMOO7NBdzFZ7wQqV" name="facturaloperu_api_config_token" id="facturaloperu_api_config_token" value="<?php echo get_option('facturaloperu_api_config_token'); ?>" style="min-width: 400px" class="input-text regular-input">
                                 </td>
                             </tr>
                             <tr>
@@ -54,7 +54,7 @@ function facturaloperu_api_config_page_settings(){
                                     <label>API_URL</label>
                                 </th>
                                 <td class="forminp forminp-text">
-                                    <input type="text" name="facturaloperu_api_config_url" id="facturaloperu_api_config_url" value="<?php echo get_option('facturaloperu_api_config_url'); ?>" style="min-width: 400px" class="input-text regular-input">
+                                    <input type="text" placeholder="https://demo.facturalo.pro/api/documents" name="facturaloperu_api_config_url" id="facturaloperu_api_config_url" value="<?php echo get_option('facturaloperu_api_config_url'); ?>" style="min-width: 400px" class="input-text regular-input">
                                 </td>
                             </tr>
                         </table>
