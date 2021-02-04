@@ -13,6 +13,13 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 _Tener una instalación limpia de Wordpress superior a la version 5.0.1 con Woocommerce instalado_
 
+### Plugins de terceros
+
+* WooCommerce 
+* WC - APG NIF/CIF/NIE Field
+* Facturaloperu-wp-api-invoice
+* WP Mail SMTP
+* [Ubigeo-peru](https://gitlab.com/rash07/wp-ubigeo-facturaloperu)
 
 ### Instalación
 
