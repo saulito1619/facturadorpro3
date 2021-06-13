@@ -1,4 +1,6 @@
 jQuery(document).ready(function($) {
+    $('#billing_postcode_field').attr('hidden', true);
+    $('#shipping_postcode_field').attr('hidden', true);
     $('#billing_nif').blur(function() {
         var abs_url = wc_cart_fragments_params.ajax_url
         var lgt = $(this).val().length

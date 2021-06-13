@@ -25,9 +25,10 @@ if ( ! function_exists( 'erplugin_response_json_api' ) )
         $customer_address    = get_post_meta( $post->ID, '_billing_address_1', true );
         $customer_city       = get_post_meta( $post->ID, '_billing_city', true );
         $customer_state      = get_post_meta( $post->ID, '_billing_state', true );
-        $customer_postcode   = get_post_meta( $post->ID, '_billing_distrito', true );
+        $customer_postcode   = get_post_meta( $post->ID, '_billing_postcode', true );
         $customer_ruc        = get_post_meta( $post->ID, '_billing_nif', true );
         $api_document_type   = get_post_meta( $post->ID, 'api_document_type', true );
+        $shipping_amount     = $order->shipping_total;
 
         $document_type = (strlen($customer_ruc) == 8) ? '1' : '6';
 
@@ -51,7 +52,7 @@ if ( ! function_exists( 'erplugin_response_json_api' ) )
             $t = $order->get_line_tax($item_data) + $order->get_line_subtotal($item_data);
 
             $item = [
-                "codigo_interno" => "",
+                "codigo_interno" => $product->get_sku(),
                 "descripcion" => $product_name,
                 "unidad_de_medida" => "NIU",
                 "cantidad" => $item_quantity,
@@ -94,18 +95,18 @@ if ( ! function_exists( 'erplugin_response_json_api' ) )
                 "telefono" => ""
             ),
             "totales" => array(
-                "total_operaciones_gravadas" =>  $order->total - $order->total_tax,
+                "total_operaciones_gravadas" =>  $order->total - $order->total_tax - $shipping_amount,
                 "total_operaciones_inafectas" => 0.00,
                 "total_operaciones_exoneradas" => 0.00,
                 "total_igv" => $order->total_tax,
                 "total_impuestos" => $order->total_tax,
-                "total_valor" => $order->total - $order->total_tax,
-                "total_venta" => $order->total,
+                "total_valor" => $order->total - $order->total_tax - $shipping_amount,
+                "total_venta" => $order->total - $shipping_amount,
             ),
             "items" => $items,
             "extras" => array(
                 "forma_de_pago" => $order->payment_method_title,
-                "observaciones" => "probando"
+                "observaciones" => ""
             ),
         );
 
